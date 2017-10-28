@@ -24,3 +24,19 @@ var encodedAddress = geocode.geocodeAddress(argv.address, (errorMessage, results
     }
 });
 
+const request = require('request');
+
+request({
+    url: 'https://api.darksky.net/forecast/7f318e5528b9d6cbd939aad05c12a166/37.8267,-122.4233',
+    json: true
+}, (error, response, body) => {
+    if(!error && response.statusCode === 200){
+        console.log(body.currently.temperature);
+    }
+    else {
+        console.log('Unable to fetch weather');
+    }
+})
+
+//7f318e5528b9d6cbd939aad05c12a166
+
