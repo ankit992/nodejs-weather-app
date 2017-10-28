@@ -27,7 +27,7 @@ var encodedAddress = geocode.geocodeAddress(argv.address, (errorMessage, results
                 console.log(errorMessage);
             }
             else {
-                console.log(JSON.stringify(weatherResults, undefined, 2));
+                console.log(`It's currently ${weatherResults.temperature}, and it feels like ${weatherResults.apparentTemperature}`);
             }
         });
     }
